@@ -1,22 +1,24 @@
 package com.jk.kafkaapi;
 
-import com.jk.kafkaapi.kafka.KafkaReq;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.annotation.EnableKafkaStreams;
 
+/**
+ * also we can configure kafka properties in application.yml file. then no need of create config class
+ */
 @SpringBootApplication
+@EnableKafkaStreams
+@EnableKafka
 public class KafkaApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(KafkaApiApplication.class, args);
     }
-
-    KafkaReq kafkaReq=new KafkaReq();
-
-
 }
 
+//new version of kafka no need of zookeeper
 
 //zookeeper-server-start.bat ..\..\config\zookeeper.properties
 //

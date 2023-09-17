@@ -11,7 +11,7 @@ public class MyKafkaSender {
     KafkaTemplate<String, Object> kafkaTemplate;
 
     public void sentMsg(KafkaReq kafkaReq) {
-        kafkaTemplate.send(kafkaReq.getName(), kafkaReq.getData());
+        kafkaTemplate.send(kafkaReq.getCode(), kafkaReq.getData());
     }
 
 }

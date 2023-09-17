@@ -11,7 +11,7 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
 
     ///create topic from code or expose the api
-    /// for producers
+    ///for producers
     @Bean
     public NewTopic newTopic() {
         return TopicBuilder.name("demo").compact().build();

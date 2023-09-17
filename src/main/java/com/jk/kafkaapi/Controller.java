@@ -17,9 +17,6 @@ public class Controller {
     @Autowired
     MyKafkaSender myKafkaSender;
 
-    @Autowired
-    KafkaProducerConfig kafkaProducerConfig;
-
     @GetMapping("/{name}")
     public void createTopic(@PathVariable String name) {
         kafkaTopicConfig.createRestTopic(name);
@@ -27,7 +24,7 @@ public class Controller {
 
 
     @PostMapping()
-    public void createTopic(@RequestBody KafkaReq body) {
+    public void sendMsg(@RequestBody KafkaReq body) {
         myKafkaSender.sentMsg(body);
     }
 
